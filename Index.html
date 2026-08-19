@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายรับ - รายจ่าย</title>
+    <script src="budgetform.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <form id="budgetForm">
+            <label for="item">รายการ:</label>
+            <input type="text" id="item" name="item" placeholder="ชื่อรายการ" required maxlength="100">
+            <br><br>
+
+            <label for="date">วันที่:</label>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="amount">จำนวนเงิน:</label>
+            <input type="number" id="amount" name="amount" placeholder="จำนวนเงิน" required>
+            <br><br>
+
+            <input type="radio" id="income" name="subject" value="รายรับ" required>
+            <label for="income">รายรับ</label>
+            <input type="radio" id="expense" name="subject" value="รายจ่าย" required>
+            <label for="expense">รายจ่าย</label>
+            <br><br>
+
+            <input type="submit" value="ตกลง">
+            <input type="reset" value="ยกเลิก">
+        </form>
+    </div>
+
+    <div>
+        <h2>สรุปยอด</h2>
+        <p>รายรับรวม: <span id="totalIncome">0</span> บาท</p>
+        <p>รายจ่ายรวม: <span id="totalExpense">0</span> บาท</p>
+        <p>ยอดคงเหลือ: <span id="balance">0</span> บาท</p>
+    </div>
+
+    <div>
+        <h2>แสดงค่าใช้จ่ายทั้งหมด</h2>
+        <ul id="transaction">
+            <!-- รายการจะถูกเพิ่มที่นี่ -->
+        </ul>
+    </div>
+</body>
+
+</html>
